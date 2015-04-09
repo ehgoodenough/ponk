@@ -9,7 +9,13 @@
     </head>
     <body>
         <div id="game-frame" class="_4x3"></div>
+        <script>document.frame = document.getElementById("game-frame")</script>
         <script src="index.js" type="text/javascript"></script>
         <link href="index.css" rel="stylesheet" type="text/css"/>
+        <script>
+            window.getSizeOfEms = function() {
+                return Number(getComputedStyle(document.frame, '').fontSize.match(/(\d+(\.\d+)?)px$/)[1])
+            }
+        </script>
     </body>
 </html>
